@@ -15,7 +15,10 @@ export default {
     testOnly: false,
     guildOnly: true,
 
-    callback: ({ message, interaction, args }) => {
+    callback: ({ message, interaction, args,
+        member: staff,
+        guild,
+        client, }) => {
         const channel = (message ? message.mentions.channels.first() : interaction.options.getChannel('channel')) as TextChannel
         if (!channel || channel.type !== 'GUILD_TEXT') {
             return 'Please tag a text channel'
@@ -25,6 +28,7 @@ export default {
         const text = args.join(' ')
 
         channel.send(text)
+        
 
         if (interaction) {
             interaction.reply({

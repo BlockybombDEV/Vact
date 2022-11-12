@@ -15,12 +15,12 @@ export default {
           [
             {
               name: "MODERATION",
-              value: "moderation commands",
+              value: "list",
               inline: true
             },
             {
               name: "/ban",
-              value: "**⤷** Bas an user"
+              value: "**⤷** Bans an user"
             },
             {
               name: "/cc",

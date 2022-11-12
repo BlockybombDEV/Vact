@@ -4,6 +4,8 @@ export default {
     category: 'testing',
     description: 'Simulate a join',
 
+    permissions: ['ADMINISTRATOR'],
+
     slash: 'both',
     testOnly: true,
 

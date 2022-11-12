@@ -59,6 +59,6 @@ export default (client: Client) => {
 }
 
 export const config = {
-    dbName: 'EXPIRED_PUNISHMENTS',
-    displayName: 'Expired Punishments',
+    dbName: 'EXPIRED_PUNISHMENTS_VACT',
+    displayName: 'Expired Punishments (Vact)',
 }

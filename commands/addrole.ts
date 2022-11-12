@@ -5,7 +5,7 @@ export default {
     category: 'Configuration',
     description: 'Add role to auto role message.',
 
-    permissions: ['ADMINISTRATOR'],
+    permissions: ['ADMINISTRATOR', 'MANAGE_GUILD'],
 
     minArgs: 3,
     maxArgs: 3,

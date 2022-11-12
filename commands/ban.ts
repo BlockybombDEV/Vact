@@ -1,4 +1,4 @@
-import { Message, User } from 'discord.js'
+import { Message, MessageEmbed, User } from 'discord.js'
 import { ICommand } from 'wokcommands'
 import punishmentSchema from '../models/punishment-schema'
 
@@ -32,7 +32,7 @@ export default {
         const reason = args.join(' ')
         let user: User | undefined
 
-        if (Message) {
+        if (message) {
             user = message.mentions.users?.first()
         } else {
             user = interaction.options.getUser('user') as User
@@ -76,7 +76,11 @@ export default {
             type: 'ban',
         })
         if (result) {
-            return `<@${userId}> is already banned in this server.`
+            let BanExist = `${userId} is already banned in this server.`
+
+            const embed3 = new MessageEmbed().setTitle(BanExist).setColor('ORANGE')
+            
+            return embed3
         }
 
         try {
@@ -91,9 +95,18 @@ export default {
                 type: 'ban',
             }).save()
         } catch (ignored) {
-            return 'Cannot ban that user.'
+            let BanFail = 'Cannot ban that user.'
+
+            const embed2 = new MessageEmbed().setTitle(BanFail).setColor('RED')
+            
+            return embed2
         }
 
-        return `<@${userId}> has been banned for "${duration}" Reason: ${reason}`
+        let Ban = `${userId} has been banned for "${duration}"`
+        let BanReason = `Reason: ${reason}`
+
+        const embed = new MessageEmbed().setTitle(Ban).setColor('GREEN').setDescription(BanReason)
+
+        return embed
     },
 } as ICommand

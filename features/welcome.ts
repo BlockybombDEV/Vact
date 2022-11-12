@@ -29,6 +29,6 @@ export default (client: Client) => {
 }
 
 export const config = {
-    displayName: 'Welcome Channel',
-    dbName: 'WELCOME_CHANNEL'
+    displayName: 'Welcome Channel (Vact)',
+    dbName: 'WELCOME_CHANNEL_VACT'
 }

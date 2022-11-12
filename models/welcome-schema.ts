@@ -11,5 +11,5 @@ const welcomeSchema = new Schema({
     text: reqString 
 })
 
-const name = 'welcome-tutorial'
+const name = 'welcome'
 export default mongoose.models[name] || mongoose.model(name, welcomeSchema, name)

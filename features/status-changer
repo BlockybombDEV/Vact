@@ -2,9 +2,9 @@ import { Client } from "discord.js";
 
 export default (client: Client) => {
     const statusOptions = [
-        'Follow IzFalcon on twitch',
+        'with Elon Musk',
         'Valorant',
-        'with commands'
+        'the drums'
     ]
     let counter = 0
 
@@ -28,6 +28,6 @@ export default (client: Client) => {
 }
 
 export const config = {
-    dbName: 'STATUS_CHANGER',
-    displayName: 'Status Changer'
+    dbName: 'STATUS_CHANGER_VACT',
+    displayName: 'Status Changer (Vact)'
 }

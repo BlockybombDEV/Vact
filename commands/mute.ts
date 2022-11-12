@@ -1,4 +1,4 @@
-import { Message, User } from 'discord.js'
+import { Message, MessageEmbed, User } from 'discord.js'
 import { ICommand } from 'wokcommands'
 import punishmentSchema from '../models/punishment-schema'
 
@@ -76,7 +76,11 @@ export default {
             type: 'mute',
         })
         if (result) {
-            return `<@${userId}> is already muted in this server.`
+            let MuteExist = `<@${userId}> is already muted in this server.`
+
+            const embed4 = new MessageEmbed().setTitle(MuteExist).setColor('ORANGE')
+
+            return embed4
         }
 
         try {
@@ -84,7 +88,11 @@ export default {
             if (member) {
                 const muteRole = guild.roles.cache.find((role) => role.name === 'Muted')
                 if (!muteRole) {
-                    return 'This server does not have a "Muted" role. Create one to continue.'
+                    let MuteMissing = 'This server does not have a "Muted" role. Create one to continue.'
+
+                    const embed3 = new MessageEmbed().setTitle(MuteMissing).setColor('RED')
+
+                    return embed3
                 }
 
                 member.roles.add(muteRole)
@@ -99,9 +107,16 @@ export default {
                 type: 'mute',
             }).save()
         } catch (ignored) {
-            return 'Cannot mute that user.'
-        }
+            let MuteFail = 'Cannot mute that user.'
 
-        return `<@${userId}> has been muted for "${duration}"`
+            const embed2 = new MessageEmbed().setTitle(MuteFail).setColor('RED')
+
+            return embed2
+        }
+        let Mute = `<@${userId}> has been muted for "${duration}"`
+
+        const embed = new MessageEmbed().setTitle(Mute).setColor('GREEN')
+
+        return embed
     },
 } as ICommand

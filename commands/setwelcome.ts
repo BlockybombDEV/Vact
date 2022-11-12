@@ -6,7 +6,7 @@ export default {
     category: 'Configuration',
     description: 'Sets welcome channel.',
 
-    permission: ['ADMINISTRATOR'],
+    permissions: ['ADMINISTRATOR', 'MANAGE_GUILD'],
 
     minArgs: 2,
     expectedArgs: '<channel> <text>',
